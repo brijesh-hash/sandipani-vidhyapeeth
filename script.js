@@ -1,3 +1,22 @@
+// Hero Background Carousel
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const totalSlides = slides.length;
+
+function nextSlide() {
+    // Remove active class from current slide
+    slides[currentSlide].classList.remove('active');
+
+    // Move to next slide
+    currentSlide = (currentSlide + 1) % totalSlides;
+
+    // Add active class to new slide
+    slides[currentSlide].classList.add('active');
+}
+
+// Auto-rotate every 5 seconds
+setInterval(nextSlide, 5000);
+
 // Mobile Menu Toggle
 const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 const navMenu = document.getElementById('nav-menu');
@@ -22,7 +41,7 @@ const navItems = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
     let current = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -30,7 +49,7 @@ window.addEventListener('scroll', () => {
             current = section.getAttribute('id');
         }
     });
-    
+
     navItems.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href').slice(1) === current) {
@@ -72,7 +91,7 @@ const contactForm = document.getElementById('contact-form');
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     // Get form values
     const formData = {
         name: document.getElementById('name').value,
@@ -81,13 +100,13 @@ contactForm.addEventListener('submit', (e) => {
         subject: document.getElementById('subject').value,
         message: document.getElementById('message').value
     };
-    
+
     // In a real application, you would send this data to a server
     console.log('Form submitted:', formData);
-    
+
     // Show success message
     alert('Thank you for your message! We will get back to you soon.');
-    
+
     // Reset form
     contactForm.reset();
 });
@@ -120,7 +139,7 @@ animateElements.forEach(el => {
 const animateCounter = (element, target, duration = 2000) => {
     let start = 0;
     const increment = target / (duration / 16);
-    
+
     const updateCounter = () => {
         start += increment;
         if (start < target) {
@@ -130,7 +149,7 @@ const animateCounter = (element, target, duration = 2000) => {
             element.textContent = target;
         }
     };
-    
+
     updateCounter();
 };
 
@@ -143,11 +162,11 @@ const statObserver = new IntersectionObserver((entries) => {
             const text = statNumber.textContent;
             const number = parseInt(text.replace(/\D/g, ''));
             const suffix = text.replace(/[0-9]/g, '');
-            
+
             let currentNumber = 0;
             const duration = 2000;
             const increment = number / (duration / 16);
-            
+
             const updateCounter = () => {
                 currentNumber += increment;
                 if (currentNumber < number) {
@@ -157,7 +176,7 @@ const statObserver = new IntersectionObserver((entries) => {
                     statNumber.textContent = number + suffix;
                 }
             };
-            
+
             updateCounter();
         }
     });
@@ -170,18 +189,9 @@ document.querySelectorAll('.stat-card').forEach(card => {
 // Add hover effect to cards
 const cards = document.querySelectorAll('.program-card, .facility-card, .contact-card, .info-card');
 cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
         this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
     });
-});
-
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroBackground = document.querySelector('.hero-background');
-    if (heroBackground) {
-        heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
 });
 
 // Hide scroll indicator after scrolling
