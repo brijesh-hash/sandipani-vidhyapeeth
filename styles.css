@@ -169,6 +169,38 @@ ul {
     transform: translateY(-2px);
 }
 
+/* Top Bar */
+.top-bar {
+    background: var(--bg-dark);
+    color: white;
+    padding: 0.5rem 0;
+    font-size: 0.875rem;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top-bar-links {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.top-bar-link {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.813rem;
+    transition: all var(--transition-base);
+}
+
+.top-bar-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -460,6 +492,120 @@ section {
     line-height: 1.8;
 }
 
+/* Welcome Section */
+.welcome {
+    background: white;
+}
+
+.welcome-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-3xl);
+    align-items: center;
+}
+
+.welcome-image {
+    display: flex;
+    justify-content: center;
+}
+
+.principal-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-2xl);
+    border: 5px solid var(--primary-color);
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    color: white;
+}
+
+.welcome-text {
+    max-width: 600px;
+}
+
+.welcome-message {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.063rem;
+}
+
+.welcome-signature {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--primary-color);
+}
+
+.welcome-signature strong {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+}
+
+.welcome-signature em {
+    color: var(--text-secondary);
+}
+
+/* At a Glance Section */
+.at-a-glance {
+    background: var(--bg-secondary);
+}
+
+.glance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.glance-card {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+}
+
+.glance-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-2xl);
+}
+
+.glance-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.glance-number {
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-sm);
+}
+
+.glance-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* About Section */
 .about {
     background: var(--bg-secondary);
@@ -672,6 +818,222 @@ section {
 .facility-card p {
     font-size: 0.875rem;
     color: var(--text-secondary);
+}
+
+/* Student Life Section */
+.student-life {
+    background: white;
+}
+
+.student-life-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.life-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.life-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.life-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.life-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.life-icon {
+    font-size: 4rem;
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    background: var(--gradient-primary);
+}
+
+.life-content {
+    padding: var(--spacing-lg);
+}
+
+.life-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.life-content p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* News & Events Section */
+.news-events {
+    background: var(--bg-secondary);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.news-card {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    border-left: 4px solid var(--primary-color);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-2xl);
+}
+
+.news-date {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.news-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.news-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.news-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: all var(--transition-base);
+}
+
+.news-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Alumni Section */
+.alumni {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
+}
+
+.alumni-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-3xl);
+    align-items: start;
+}
+
+.alumni-description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.063rem;
+}
+
+.alumni-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.alumni-stat {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.alumni-stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.alumni-stat-label {
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-top: var(--spacing-xs);
+}
+
+.alumni-highlights {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.alumni-highlights h3 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+}
+
+.alumni-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.alumni-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    transition: all var(--transition-base);
+}
+
+.alumni-item:hover {
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.alumni-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.alumni-item strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+}
+
+.alumni-item p {
+    color: var(--text-secondary);
+    font-size: 0.938rem;
+    margin: 0;
 }
 
 /* Lab Showcase */
