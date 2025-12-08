@@ -250,6 +250,7 @@ ul {
 }
 
 .logo-text {
+    font-family: var(--font-display);
     background: var(--gradient-secondary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
