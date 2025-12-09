@@ -21,19 +21,21 @@ setInterval(nextSlide, 5000);
 const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 const navMenu = document.getElementById('nav-menu');
 
-mobileMenuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    mobileMenuToggle.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
+if (mobileMenuToggle && navMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
     });
-});
+
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+        });
+    });
+}
 
 // Active Navigation Link on Scroll
 const sections = document.querySelectorAll('section');
@@ -181,16 +183,49 @@ cards.forEach(card => {
     });
 });
 
-// Hide scroll indicator after scrolling
-window.addEventListener('scroll', () => {
+// Scroll indicator functionality
+document.addEventListener('DOMContentLoaded', function() {
     const scrollIndicator = document.querySelector('.scroll-indicator');
+
     if (scrollIndicator) {
-        if (window.scrollY > 100) {
-            scrollIndicator.style.opacity = '0';
-        } else {
-            scrollIndicator.style.opacity = '0.8';
-        }
+        console.log('Scroll indicator found!');
+
+        // Make it clickable to scroll to next section
+        scrollIndicator.addEventListener('click', function(e) {
+            console.log('Scroll indicator clicked!');
+            e.preventDefault();
+
+            const nextSection = document.querySelector('.quick-overview');
+            console.log('Next section:', nextSection);
+
+            if (nextSection) {
+                const offset = 80; // navbar height
+                const elementPosition = nextSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    } else {
+        console.log('Scroll indicator NOT found!');
     }
+
+    // Hide scroll indicator after scrolling
+    window.addEventListener('scroll', () => {
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (scrollIndicator) {
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+            } else {
+                scrollIndicator.style.opacity = '0.8';
+                scrollIndicator.style.pointerEvents = 'auto';
+            }
+        }
+    });
 });
 
 console.log('School website loaded successfully!');

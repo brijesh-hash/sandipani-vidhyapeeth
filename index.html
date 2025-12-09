@@ -7,6 +7,7 @@
     <meta name="description"
         content="Sandipani VidhyaPeeth - Excellence in Education. A premier institution in Ponchhari, Madhya Pradesh">
     <title>Sandipani VidhyaPeeth - Home</title>
+    <link rel="icon" type="image/png" href="assets/images/sandipanilogo.png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,38 +17,26 @@
 </head>
 
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container top-bar-container">
-            <div class="top-bar-links">
-                <a href="#" class="top-bar-link">E-PORTAL</a>
-                <a href="mailto:info@sandipanividhyapeeth.edu" class="top-bar-link">MAILS @ SANDIPANI</a>
-            </div>
-        </div>
-    </div>
-
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <img src="assets/images/sandipanilogo.png" alt="Sandipani VidhyaPeeth Logo" class="logo-image">
-                <span class="logo-text">Sandipani VidhyaPeeth</span>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html" class="nav-link active">HOME</a></li>
-                <li><a href="pages/about.html" class="nav-link">ABOUT US</a></li>
-                <li><a href="pages/academics.html" class="nav-link">ACADEMICS</a></li>
-                <li><a href="pages/student-life.html" class="nav-link">STUDENT LIFE</a></li>
-                <li><a href="pages/admissions.html" class="nav-link">ADMISSIONS</a></li>
-                <li><a href="pages/news.html" class="nav-link">NEWS & EVENTS</a></li>
-                <li><a href="pages/alumni.html" class="nav-link">ALUMNI</a></li>
-                <li><a href="pages/contact.html" class="nav-link">CONTACT US</a></li>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🎓</div>
+                <div class="logo-text">Sandipani VidhyaPeeth</div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="pages/about.html" class="nav-link">About Us</a></li>
+                <li class="dropdown">
+                    <a href="pages/academics.html" class="nav-link dropdown-toggle">Academics</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/admissions.html" class="nav-link">Admissions</a></li>
+                        <li><a href="pages/alumni.html" class="nav-link">Alumni</a></li>
+                    </ul>
+                </li>
+                <li><a href="pages/student-life.html" class="nav-link">Student Life</a></li>
+                <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
@@ -69,14 +58,14 @@
                     every student's potential</p>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <a href="#quick-overview" class="scroll-indicator">
             <span>Scroll Down</span>
             <div class="scroll-arrow"></div>
-        </div>
+        </a>
     </section>
 
     <!-- Quick Overview Section -->
-    <section class="quick-overview">
+    <section class="quick-overview" id="quick-overview">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Welcome to <span class="gradient-text">Sandipani VidhyaPeeth</span></h2>
