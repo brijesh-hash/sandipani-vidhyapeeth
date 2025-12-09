@@ -271,8 +271,9 @@ ul {
 
 .nav-menu {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     list-style: none;
+    align-items: center;
 }
 
 .nav-link {
@@ -282,7 +283,8 @@ ul {
     letter-spacing: 0.5px;
     transition: all var(--transition-base);
     position: relative;
-    padding: var(--spacing-xs) var(--spacing-md);
+    padding: var(--spacing-xs) 0;
+    white-space: nowrap;
     border-radius: var(--radius-sm);
 }
 
@@ -295,13 +297,13 @@ ul {
     background: transparent;
 }
 
-.dropdown:hover > .nav-link {
+.dropdown:hover>.nav-link {
     background: var(--secondary-color);
     color: white;
 }
 
 /* Dropdown Menu Styles */
-.nav-menu > li {
+.nav-menu>li {
     position: relative;
 }
 
@@ -1806,7 +1808,7 @@ section {
 
 /* Academic Hero */
 .academic-hero {
-    background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('../images/academic-hero.jpg');
+    background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('../images/hero-background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
