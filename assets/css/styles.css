@@ -244,11 +244,9 @@ ul {
     color: white;
 }
 
-.logo-img {
-    height: 60px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+.logo-icon {
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
 }
 
 .logo-text {
@@ -273,8 +271,9 @@ ul {
 
 .nav-menu {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     list-style: none;
+    align-items: center;
 }
 
 .nav-link {
@@ -284,7 +283,8 @@ ul {
     letter-spacing: 0.5px;
     transition: all var(--transition-base);
     position: relative;
-    padding: var(--spacing-xs) var(--spacing-md);
+    padding: var(--spacing-xs) 0;
+    white-space: nowrap;
     border-radius: var(--radius-sm);
 }
 
@@ -1808,7 +1808,7 @@ section {
 
 /* Academic Hero */
 .academic-hero {
-    background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('../images/academic-hero.jpg');
+    background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('../images/hero-background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
