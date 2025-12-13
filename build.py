@@ -60,12 +60,19 @@ def clean_html(content):
 
     def add_html_extension(match):
         href = match.group(1)
-        if href.startswith('/static') or href.startswith('#') or href == '/':
+        if href.startswith('#') or href == '/':
             return f'href="{href}"'
         page = href.lstrip('/')
+        if page.startswith('static'):
+            # Already relative
+            return f'href="{page}"'
         return f'href="{page}.html"'
 
     content = re.sub(r'href="(/[^"]*)"', add_html_extension, content)
+
+    # Fix absolute paths for static assets to relative
+    content = content.replace('href="/static/', 'href="static/')
+    content = content.replace('src="/static/', 'src="static/')
 
     # Clean up whitespace
     content = re.sub(r'\n\s*\n\s*\n', '\n\n', content)
