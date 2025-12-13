@@ -21,6 +21,9 @@ PAGES = [
     ("admissions", "admissions.html"),
     ("student-life", "student-life.html"),
     ("contact", "contact.html"),
+    ("request-info", "request-info.html"),
+    ("plan-visit", "plan-visit.html"),
+    ("donate", "donate.html"),
 ]
 
 def clean_html(content):
